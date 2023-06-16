@@ -185,73 +185,92 @@
     <!--/ Abstract. -->
 
   </div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Effects of Our Contributions</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our novel input manipulation with chroma keying successfully achieves high-fidelity head swapping performance.
+            Point and drag your mounse!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="video-compare-container">
+              <video class="video" id="lincoln1" loop playsinline autoPlay muted src="./static/videos/lincoln1.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas height=0 class="videoMerge" id="lincoln1Merge"></canvas>
+          </div>
+    </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="video-compare-container">
+              <video class="video" id="sejong1" loop playsinline autoPlay muted src="./static/videos/sejong1.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas height=0 class="videoMerge" id="sejong1Merge"></canvas>
+          </div>
+    </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="video-compare-container">
+              <video class="video" id="lincoln2" loop playsinline autoPlay muted src="./static/videos/lincoln2.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas height=0 class="videoMerge" id="lincoln2Merge"></canvas>
+          </div>
+    </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="video-compare-container">
+              <video class="video" id="sejong2" loop playsinline autoPlay muted src="./static/videos/sejong2.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas height=0 class="videoMerge" id="sejong2Merge"></canvas>
+          </div>
+    </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="video-compare-container">
+              <video class="video" id="lincoln3" loop playsinline autoPlay muted src="./static/videos/lincoln3.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas height=0 class="videoMerge" id="lincoln3Merge"></canvas>
+          </div>
+    </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="video-compare-container">
+              <video class="video" id="sejong3" loop playsinline autoPlay muted src="./static/videos/sejong3.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas height=0 class="videoMerge" id="sejong3Merge"></canvas>
+          </div>
+    </div>
+    </div>
+  </div>  
 </section>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <div class="video-compare-container">
-          <video class="video" id="lincoln1" loop playsinline autoPlay muted src="./static/videos/lincoln_1.mp4" onplay="resizeAndPlay(this)"></video>
-          <canvas height=0 class="videoMerge" id="lincoln1Merge"></canvas>
-      </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <div class="video-compare-container">
-          <video class="video" id="sejong1" loop playsinline autoPlay muted src="./static/videos/sejong_1.mp4" onplay="resizeAndPlay(this)"></video>
-          <canvas height=0 class="videoMerge" id="sejong1Merge"></canvas>
-      </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <div class="video-compare-container">
-          <video class="video" id="lincoln2" loop playsinline autoPlay muted src="./static/videos/lincoln_2.mp4" onplay="resizeAndPlay(this)"></video>
-          <canvas height=0 class="videoMerge" id="lincoln2Merge"></canvas>
-      </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <div class="video-compare-container">
-          <video class="video" id="sejong2" loop playsinline autoPlay muted src="./static/videos/sejong_2.mp4" onplay="resizeAndPlay(this)"></video>
-          <canvas height=0 class="videoMerge" id="sejong2Merge"></canvas>
-      </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <div class="video-compare-container">
-          <video class="video" id="lincoln3" loop playsinline autoPlay muted src="./static/videos/lincoln_3.mp4" onplay="resizeAndPlay(this)"></video>
-          <canvas height=0 class="videoMerge" id="lincoln3Merge"></canvas>
-      </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <div class="video-compare-container">
-          <video class="video" id="sejong3" loop playsinline autoPlay muted src="./static/videos/sejong_3.mp4" onplay="resizeAndPlay(this)"></video>
-          <canvas height=0 class="videoMerge" id="sejong3Merge"></canvas>
-      </div>
-</div>
-</div>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3">Motivation</h2>
-      <img src="./static/images/motivation.jpg" class="center">
-      <h2 class="content has-text-justified">
-        Motivations of our work. Chroma-HS is proposed in consideration of the industrial application due to imperfect inpainting 
-        problems such as (a). Chroma-HS also aims to overcome the low-fidelity problems as described in (b) and (c) of the previous 
-        work (<a href="https://github.com/jmliu88/HeSer">HeSer</a>) in the green screen scenario. (d), (e), and (f) show our high-fidelity 
-        results corresponding region to (a), (b), and (c), respectively.
-      </h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Motivation</h2>
+          <img src="./static/images/motivation.jpg" class="center">
+          <h2 class="content has-text-justified">
+            Motivations of our work. Chroma-HS is proposed in consideration of the industrial application due to imperfect inpainting 
+            problems such as (a). Chroma-HS also aims to overcome the low-fidelity problems as described in (b) and (c) of the previous 
+            work (<a href="https://github.com/jmliu88/HeSer">HeSer</a>) in the green screen scenario. (d), (e), and (f) show our high-fidelity 
+            results corresponding region to (a), (b), and (c), respectively.
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -259,14 +278,18 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3">Method</h2>
-      <img src="./static/images/network.jpg" class="center">
-      <h2 class="content has-text-justified">
-        Network overview of Chroma-HS. Chroma-HS consists of an encoder (E), a conditional colorization module (CoCoMo), and a decoder (D). 
-        We visualize our proposed input (X) manipulation method (black dotted box) with overall training and inference scheme. 
-        Red boxes denote the example of train samples while blue boxes represent the test environment. 
-        The CoCoMo block uses a cross-attention mechanism via a conditional projection embedder φ.
-      </h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <img src="./static/images/network.jpg" class="center">
+          <h2 class="content has-text-justified">
+            Network overview of Chroma-HS. Chroma-HS consists of an encoder (E), a conditional colorization module (CoCoMo), and a decoder (D). 
+            We visualize our proposed input (X) manipulation method (black dotted box) with overall training and inference scheme. 
+            Red boxes denote the example of train samples while blue boxes represent the test environment. 
+            The CoCoMo block uses a cross-attention mechanism via a conditional projection embedder φ.
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -274,12 +297,16 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3">Comparisons</h2>
-      <img src="./static/images/main_comparison.jpg" class="center">
-      <h2 class="content has-text-justified">
-        Qualitative comparison with the state-of-the-art method. The third and fourth rows are the results from HeSer 
-        trained on in-the-wild configuration and green screen configuration (Green Screen), respectively.
-      </h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Comparisons</h2>
+          <img src="./static/images/main_comparison.jpg" class="center">
+          <h2 class="content has-text-justified">
+            Qualitative comparison with the state-of-the-art method. The third and fourth rows are the results from HeSer 
+            trained on in-the-wild configuration and green screen configuration (Green Screen), respectively.
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>
