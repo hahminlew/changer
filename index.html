@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Towards High-Fidelity Head Swapping with Chroma Keying.">
+  <meta name="keywords" content="Head Swapping, Chroma Keying, Green Screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards High-Fidelity Head Swapping with Chroma Keying</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/github.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Towards High-Fidelity Head Swapping with Chroma Keying</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://hahminlew.github.io/">Hah Min Lew</a><sup>1</sup></span>
+            <span class="author-block">
+              <a href="">Sahng-Min Yoo</a><sup>1</sup></span>
+            <span class="author-block">
+              <a href="">Hyunwoo Kang</a><sup>1</sup></span>
+            <span class="author-block">
+              <a href="">Gyeong-Moon Park</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Klleon AI Research,</span>
+            <span class="author-block"><sup>2</sup>Kyung Hee University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hahminlew/Chroma-HS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Chroma-HS generates high-fidelity head swapped results.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-lincoln-2">
+          <video poster="" id="lincoln-2-green" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lincoln2_green.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-sejong-2">
+          <video poster="" id="sejong-2-green" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/sejong2_green.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lincoln-1">
+          <video poster="" id="lincoln-1-green" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lincoln1_green.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-sejong-1">
+          <video poster="" id="sejong-1-green" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/sejong1_green.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lincoln-3">
+          <video poster="" id="lincoln-3-green" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lincoln3_green.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-sejong-3">
+          <video poster="" id="sejong-3-green" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/sejong3_green.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Head swapping task aims at seamlessly transplanting a source head onto a target body. 
+            Yet, the existing head swapping methods show imperfect results in inpainting the background region, 
+            which leads to a reliability issue for the industrial application systems.
+            Therefore, we propose to transfer the head swapping task to a chroma key setting to generate 
+            flawless results for industrial applications. However, we observe that simply adopting the previous 
+            head swapping to the green screen scenario still shows low-fidelity results due to 
+            (a) the unnatural generation of a gap between the source head and the target body and (b) flawed colorization of the swapped head. 
+          </p>
+          <p>
+            In this paper, we propose Chroma-HS, a new Head Swapping framework in Chroma key setting, 
+            which achieves high-fidelity head swapping results by focusing on the neck generation 
+            and conditional colorization task while utilizing chroma keying on the background.
+            In Chroma-HS, we introduce a novel input manipulation that simulates the mismatched neck regions 
+            in the swapping procedure, resulting in a robust neck generation on a green screen scenario.
+            In addition, we introduce a new Conditional Colorization Module (CoCoMo) based on a cross-attention mechanism 
+            to improve the fidelity of the swapped head. 
+            Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model 
+            on benchmark datasets qualitatively and quantitatively. 
+            Moreover, we demonstrate the effectiveness of our model using extensive in-depth studies.
+            The source code will be available at our github.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <div class="video-compare-container">
+          <video class="video" id="lincoln1" loop playsinline autoPlay muted src="./static/videos/lincoln_1.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="lincoln1Merge"></canvas>
+      </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <div class="video-compare-container">
+          <video class="video" id="sejong-1" loop playsinline autoPlay muted src="./static/videos/sejong_1.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="sejong1Merge"></canvas>
+      </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <div class="video-compare-container">
+          <video class="video" id="lincoln2" loop playsinline autoPlay muted src="./static/videos/lincoln_2.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="lincoln2Merge"></canvas>
+      </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <div class="video-compare-container">
+          <video class="video" id="sejong-2" loop playsinline autoPlay muted src="./static/videos/sejong_2.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="sejong2Merge"></canvas>
+      </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <div class="video-compare-container">
+          <video class="video" id="lincoln3" loop playsinline autoPlay muted src="./static/videos/lincoln_3.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="lincoln3Merge"></canvas>
+      </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <div class="video-compare-container">
+          <video class="video" id="sejong-3" loop playsinline autoPlay muted src="./static/videos/sejong_3.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="sejong3Merge"></canvas>
+      </div>
+</div>
+</div>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Motivation</h2>
+      <img src="./static/images/motivation.jpg" class="center">
+      <h2 class="content has-text-justified">
+        Motivations of our work. Chroma-HS is proposed in consideration of the industrial application due to imperfect inpainting 
+        problems such as (a). Chroma-HS also aims to overcome the low-fidelity problems as described in (b) and (c) of the previous 
+        work (<a href="https://github.com/jmliu88/HeSer">HeSer</a>) in the green screen scenario. (d), (e), and (f) show our high-fidelity 
+        results corresponding region to (a), (b), and (c), respectively.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Method</h2>
+      <img src="./static/images/network.jpg" class="center">
+      <h2 class="content has-text-justified">
+        Network overview of Chroma-HS. Chroma-HS consists of an encoder (E), a conditional colorization module (CoCoMo), and a decoder (D). 
+        We visualize our proposed input (X) manipulation method (black dotted box) with overall training and inference scheme. 
+        Red boxes denote the example of train samples while blue boxes represent the test environment. 
+        The CoCoMo block uses a cross-attention mechanism via a conditional projection embedder φ.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Comparisons</h2>
+      <img src="./static/images/main_comparison.jpg" class="center">
+      <h2 class="content has-text-justified">
+        Qualitative comparison with the state-of-the-art method. The third and fourth rows are the results from HeSer 
+        trained on in-the-wild configuration and green screen configuration (Green Screen), respectively.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">References</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We utilized the face reenactment network to generate our head swapping results.
+          </p>
+          <p>
+            1. <a href="https://github.com/wyhsirius/LIA">Latent Image Animator: Learning to Animate Images via Latent Space Navigation</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website including all source images and background videos is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This project page is borrowed from the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies Authors</a>.
+            Thanks for sharing a useful template.
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
