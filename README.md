@@ -1,7 +1,7 @@
 # Chroma-HS
 Thanks for sharing an awesome website template [Nerfies](https://nerfies.github.io).
 
-I also partially employs the function from [Ref-NeRF](https://dorverbin.github.io/refnerf/).
+I also partially employ the point-and-drag function via mouse from [Ref-NeRF](https://dorverbin.github.io/refnerf/).
 
 This is the repository that contains source code for the [Chroma-HS website](https://chroma-hs.github.io).
 
