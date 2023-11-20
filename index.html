@@ -152,39 +152,6 @@
     </h2>
   </div>
 </section>
-    
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Head swapping task aims at seamlessly transplanting a source head onto a target body. 
-            Yet, the existing head swapping methods show imperfect results in inpainting the background region, 
-            which leads to a reliability issue for the industrial application systems.
-            Therefore, we propose to transfer the head swapping task to a chroma key setting to generate 
-            flawless results for industrial applications. However, we observe that simply adopting the previous 
-            head swapping to the green screen scenario still shows low-fidelity results due to 
-            (a) the unnatural generation of a gap between the source head and the target body and (b) flawed colorization of the swapped head. 
-          </p>
-          <p>
-            In this paper, we propose Chroma-HS, a new Head Swapping framework in Chroma key setting, 
-            which achieves high-fidelity head swapping results by focusing on the neck generation 
-            and conditional colorization task while utilizing chroma keying on the background.
-            In Chroma-HS, we introduce a novel input manipulation that simulates the mismatched neck regions 
-            in the swapping procedure, resulting in a robust neck generation on a green screen scenario.
-            In addition, we introduce a new Conditional Colorization Module (CoCoMo) based on a cross-attention mechanism 
-            to improve the fidelity of the swapped head. 
-            Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model 
-            on benchmark datasets qualitatively and quantitatively. 
-            Moreover, we demonstrate the effectiveness of our model using extensive in-depth studies.
-            The source code will be available at our github.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
 
 <section class="section">
@@ -194,7 +161,7 @@
         <h2 class="title is-3">Effects of Our Contributions</h2>
         <div class="content has-text-justified">
           <p>
-            Our novel input manipulation with chroma keying successfully achieves high-fidelity head swapping performance.
+            Our novel FPAT and H<sup>2</sup> augmentation with chroma keying successfully achieves high-fidelity head swapping performance.
             Point and drag your mouse to see the results!
           </p>
         </div>
@@ -256,18 +223,42 @@
   </div>  
 </section>
 
-<!-- <section class="hero teaser">
+<hr>
+                
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Head swapping is a task that generates seamless results by replacing the human head of the target image with the head of the source image, which can be used in various real-world applications.
+            In this paper, we point out that the existing head swapping framework shows artifacts on the background and foreground (body and neck) regions and the unclear borders between them, especially in challenging and practical cases where a large head shape and hair differences exist between the source and the target.
+            To overcome this problem, we propose <b>Chroma-HS</b>, a framework that splits the head swapping task into the background generation and foreground generation.
+            Chroma-HS proposes a new scheme by incorporating the chroma key technique in the background for the first time, which enables a diverse flawless background generation.
+            In addition, Chroma-HS uses <b>F</b>oreground-<b>P</b>rediction and -<b>A</b>ware <b>T</b>ransformer (<b>FPAT</b>) to generate the foreground without the artifact from the background by restricting the attention of transformer blocks with the predicted foreground region. 
+            Finally, Chroma-HS mitigates the challenging case by training the model with our novel <b>H</b>ead shape and long <b>H</b>air <b>augmentation</b> (<b>H<sup>2</sup> augmentation</b>).
+            Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model on benchmark datasets both qualitatively and quantitatively. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Motivations</h2>
-          <img src="./static/images/motivation.jpg" class="center">
+          <img src="./project page_files/motivation.jpg" class="center">
           <h2 class="content has-text-justified">
-            Chroma-HS is proposed in consideration of the industrial application due to imperfect inpainting 
-            problems such as (a). Chroma-HS also aims to overcome the low-fidelity problems as described in (b) and (c) of the previous 
-            work [2] (<a href="https://github.com/jmliu88/HeSer">HeSer</a>) in the green screen scenario. (d), (e), and (f) show our high-fidelity 
-            results corresponding region to (a), (b), and (c), respectively.
+            We propose Chroma-HS to consider the real-world application. As shown in (a), the existing work [2] (<a href="">HeSer</a>) shows severe artifacts on inpainting regions. 
+            To inpaint the background flawlessly, we propose to introduce chroma keying in the head swapping framework. 
+            However, it still shows low-fidelity results to inpaint the neck and the body, which is hidden due to the head shape and hair difference described in a red box of (b). 
+            Chroma-HS generates the high-fidelity foreground with Foreground-Prediction and -Aware Transformer (FPAT) and H<sup>2</sup> augmentation. 
+            Chroma-HS removes artifacts as shown in the blue boxes of (b) and (c), and easily changes various high-fidelity real-world backgrounds.
           </h2>
         </div>
       </div>
@@ -281,18 +272,17 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Methods</h2>
-          <img src="./static/images/network.jpg" class="center">
+          <img src="./project page_files/network.jpg" class="center">
           <h2 class="content has-text-justified">
-            Chroma-HS consists of an encoder (E), a conditional colorization module (CoCoMo), and a decoder (D). 
-            We visualize our proposed input (X) manipulation method (black dotted box) with overall training and inference scheme. 
-            Red boxes denote the example of train samples while blue boxes represent the test environment. 
-            The CoCoMo block uses a cross-attention mechanism via a conditional projection embedder φ.
+            Chroma-HS consists of H<sup>2</sup> augmentation, an encoder (E), a head colorizer, a body blender including Foreground-Prediction and -Aware Transformer (FPAT) modules, which are denoted with the red box, and a decoder (D).
+            We visualize our proposed input (X) manipulation method (the blue box) with overall training and inference schemes. 
+            The head colorizer colorizes the gray head of X, and the body blender inpaints the hidden body and the neck with a foreground mask-aware attention mechanism.
           </h2>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -300,10 +290,10 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Comparisons</h2>
-          <img src="./static/images/main_comparison.jpg" class="center">
+          <img src="./project page_files/main_comparison.jpg" class="center">
           <h2 class="content has-text-justified">
             Qualitative comparison with the state-of-the-art method [2]. The third and fourth rows are the results from HeSer 
-            trained on in-the-wild configuration and green screen configuration (Green Screen), respectively.
+            inferenced on in-the-wild configuration and green screen configuration (Green Screen), respectively.
           </h2>
         </div>
       </div>
