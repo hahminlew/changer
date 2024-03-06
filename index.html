@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Towards High-Fidelity Head Swapping with Chroma Keying.">
+        content="Chroma-HS: High-Fidelity Industrial Head Swapping with Chroma Keying.">
   <meta name="keywords" content="Head Swapping, Chroma Keying, Green Screen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Towards High-Fidelity Head Swapping with Chroma Keying</title>
@@ -34,22 +34,23 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Towards High-Fidelity Head Swapping with Chroma Keying</h1>
+          <h1 class="title is-1 publication-title">Chroma-HS: High-Fidelity Industrial Head Swapping with Chroma Keying</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://hahminlew.github.io/">Hah Min Lew</a><sup>1*</sup></span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=YDQ6lwcAAAAJ">Sahng-Min Yoo</a><sup>2*</sup></span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/hyunwookang">Hyunwoo Kang</a><sup>1*</sup></span>
+              <a href="https://sites.google.com/view/hyunwookang">Hyunwoo Kang</a><sup>3*</sup></span>
             <span class="author-block">
-              <a href="https://agi.khu.ac.kr/">Gyeong-Moon Park</a><sup>3</sup></span>
+              <a href="https://agi.khu.ac.kr/">Gyeong-Moon Park</a><sup>4</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Klleon AI Research,</span>
             <span class="author-block"><sup>2</sup>Samsung Research,</span>
-            <span class="author-block"><sup>3</sup>Kyung Hee University</span>
+            <span class="author-block"><sup>3</sup>Hyperconnect,</span>
+            <span class="author-block"><sup>4</sup>Kyung Hee University</span>
           </div>
           
           <div class="is-size-5 publication-authors">
@@ -167,6 +168,9 @@
         <img src="./static/images/main.jpg" class="center">
         <div class="content has-text-justified">
           <p>
+            Illustration of our Chroma-HS pipeline: After acquiring the actor's frames (source), we can seamlessly insert acting scenes into the desired scenes with our Chroma-HS.
+            Chroma keying ensures high-fidelity backgrounds. Both of the source and the target are virtual humans.
+
             Our novel FPAT and H<sup>2</sup> augmentation with chroma keying successfully achieves high-fidelity head swapping performance.
             Point and drag your mouse to see the results!
           </p>
@@ -238,13 +242,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Head swapping is a task that generates seamless results by replacing the human head of the target image with the head of the source image, which can be used in various real-world applications.
-            In this paper, we point out that the existing head swapping framework shows artifacts on the background and foreground (body and neck) regions and the unclear borders between them, especially in challenging and practical cases where a large head shape and hair differences exist between the source and the target.
-            To overcome this problem, we propose <b>Chroma-HS</b>, a framework that splits the head swapping task into the background generation and foreground generation.
-            Chroma-HS proposes a new scheme by incorporating the chroma key technique in the background for the first time, which enables a diverse flawless background generation.
-            In addition, Chroma-HS uses <b>F</b>oreground-<b>P</b>rediction and -<b>A</b>ware <b>T</b>ransformer (<b>FPAT</b>) to generate the foreground without the artifact from the background by restricting the attention of transformer blocks with the predicted foreground region. 
-            Finally, Chroma-HS mitigates the challenging case by training the model with our novel <b>H</b>ead shape and long <b>H</b>air <b>augmentation</b> (<b>H<sup>2</sup> augmentation</b>).
-            Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model on benchmark datasets both qualitatively and quantitatively. 
+            In the film industry, scenarios arise where footage of stunt performers necessitates subsequent replacement with the original actor's head. 
+            Deep learning-based head swapping may be a viable solution in such a scenario. 
+            However, we point out that the existing head swapping framework shows artifacts in challenging cases where significant head shape and hair differences exist between the source and the target. 
+            In this paper, we propose <b>Chroma-HS</b>, a pipeline that splits the head swapping task into the background and the foreground generation. 
+            Chroma-HS proposes a new scheme that introduces chroma keying in the background for the first time, which enables a flawless and diverse background generation. 
+            In addition, Chroma-HS mitigates the challenging case by training the model with our novel <b>H</b>ead shape and long <b>H</b>air <b>augmentation</b> (<b>H<sup>2</sup> augmentation</b>).
+            Finally, Chroma-HS incorporates <b>F</b>oreground <b>P</b>redictive <b>A</b>ttention <b>T</b>ransformer (<b>FPAT</b>) to generate the foreground region by restricting the attention of transformer blocks with the predicted body mask. 
+            Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model on benchmark datasets both qualitatively and quantitatively.
           </p>
         </div>
       </div>
@@ -263,7 +268,7 @@
             We propose Chroma-HS to consider the real-world application. As shown in (a), the existing work [2] (<a href="">HeSer</a>) shows severe artifacts on inpainting regions. 
             To inpaint the background flawlessly, we propose to introduce chroma keying in the head swapping framework. 
             However, it still shows low-fidelity results to inpaint the neck and the body, which is hidden due to the head shape and hair difference described in a red box of (b). 
-            Chroma-HS generates the high-fidelity foreground with Foreground-Prediction and -Aware Transformer (FPAT) and H<sup>2</sup> augmentation. 
+            Chroma-HS generates the high-fidelity foreground with H<sup>2</sup> augmentation and Foreground Predictive Attention Transformer (FPAT). 
             Chroma-HS removes artifacts as shown in the blue boxes of (b) and (c), and easily changes various high-fidelity real-world backgrounds.
           </h2>
         </div>
@@ -280,9 +285,10 @@
           <h2 class="title is-3">Methods</h2>
           <img src="./static/images/network.jpg" class="center">
           <h2 class="content has-text-justified">
-            Chroma-HS consists of H<sup>2</sup> augmentation, an encoder (E), a head colorizer, a body blender including Foreground-Prediction and -Aware Transformer (FPAT) modules, which are denoted with the red box, and a decoder (D).
-            We visualize our proposed input (X) manipulation method (the blue box) with overall training and inference schemes. 
+            Chroma-HS consists of H<sup>2</sup> augmentation, an encoder (E), a head colorizer, a body blender including Foreground Predictive Attention Transformer (FPAT) modules, and a decoder (D).
+            We visualize our proposed input (X) manipulation method with overall training (blue) and inference (red) schemes. 
             The head colorizer colorizes the gray head of X, and the body blender inpaints the hidden body and the neck with a foreground mask-aware attention mechanism.
+            The Foreground-Prediction module predicts the foreground mask (M) of the body and the neck region, and the attention is reweighted according to M.
           </h2>
         </div>
       </div>
