@@ -115,6 +115,12 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-altman-1">
+          <video poster="" id="altman-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/sam.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         <div class="item item-lincoln-2">
           <video poster="" id="lincoln-2-green" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/lincoln2_green.mp4"
@@ -219,51 +225,6 @@
           </div>
       </div>
     </div>
-
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-          <div class="video-compare-container">
-              <video class="video" id="sejong1" loop playsinline autoPlay muted src="./static/videos/sejong1.mp4" onplay="resizeAndPlay(this)"></video>
-              <canvas height=0 class="videoMerge" id="sejong1Merge"></canvas>
-          </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-          <div class="video-compare-container">
-              <video class="video" id="lincoln2" loop playsinline autoPlay muted src="./static/videos/lincoln2.mp4" onplay="resizeAndPlay(this)"></video>
-              <canvas height=0 class="videoMerge" id="lincoln2Merge"></canvas>
-          </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-          <div class="video-compare-container">
-              <video class="video" id="sejong2" loop playsinline autoPlay muted src="./static/videos/sejong2.mp4" onplay="resizeAndPlay(this)"></video>
-              <canvas height=0 class="videoMerge" id="sejong2Merge"></canvas>
-          </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-          <div class="video-compare-container">
-              <video class="video" id="lincoln3" loop playsinline autoPlay muted src="./static/videos/lincoln3.mp4" onplay="resizeAndPlay(this)"></video>
-              <canvas height=0 class="videoMerge" id="lincoln3Merge"></canvas>
-          </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-          <div class="video-compare-container">
-              <video class="video" id="sejong3" loop playsinline autoPlay muted src="./static/videos/sejong3.mp4" onplay="resizeAndPlay(this)"></video>
-              <canvas height=0 class="videoMerge" id="sejong3Merge"></canvas>
-          </div>
-      </div>  
-    </div>
   </div>  
 </section>
 
@@ -278,10 +239,10 @@
           <p>
             In the film industry, scenarios arise where footage of stunt performers necessitates subsequent replacement with the original actor's head. 
             Deep learning-based head swapping may be a viable solution in such a scenario. 
-            However, we point out that the existing head swapping framework still shows artifacts, such as blurry results and imperfect foreground and background distinction.            
-            To mitigate this problem, we propose <b>Chroma-HS</b>, a pipeline that generates high-fidelity results via splitting the head swapping task into the background and the foreground generation.            
+            However, we point out that existing head swapping frameworks still show artifacts, such as blurry results and imperfect foreground and background distinction.            
+            To mitigate this problem, we propose <b>Chroma-HS</b>, a new pipeline that generates high-fidelity results via splitting the head swapping task into the background and the foreground generation.            
             Chroma-HS introduces chroma keying to the head swapping for the first time, which enables a flawless and diverse background generation. 
-            In addition, we introduce two novel methods to generate high-fidelity foregrounds.
+            To this end, we introduce two novel methods to generate high-fidelity foregrounds.
             We propose <b>H</b>ead shape and long <b>H</b>air <b>augmentation</b> (<b>H<sup>2</sup> augmentation</b>), which accommodates more challenging cases.
             Finally, Chroma-HS incorporates <b>F</b>oreground <b>P</b>redictive <b>A</b>ttention <b>T</b>ransformer (<b>FPAT</b>) which generates the foreground region by restricting the attention region with the predicted body mask. 
             Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model on benchmark datasets both qualitatively and quantitatively.
