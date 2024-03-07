@@ -278,11 +278,12 @@
           <p>
             In the film industry, scenarios arise where footage of stunt performers necessitates subsequent replacement with the original actor's head. 
             Deep learning-based head swapping may be a viable solution in such a scenario. 
-            However, we point out that the existing head swapping framework shows artifacts in challenging cases where significant head shape and hair differences exist between the source and the target. 
-            In this paper, we propose <b>Chroma-HS</b>, a pipeline that splits the head swapping task into the background and the foreground generation. 
-            Chroma-HS proposes a new scheme that introduces chroma keying in the background for the first time, which enables a flawless and diverse background generation. 
-            In addition, Chroma-HS mitigates the challenging case by training the model with our novel <b>H</b>ead shape and long <b>H</b>air <b>augmentation</b> (<b>H<sup>2</sup> augmentation</b>).
-            Finally, Chroma-HS incorporates <b>F</b>oreground <b>P</b>redictive <b>A</b>ttention <b>T</b>ransformer (<b>FPAT</b>) to generate the foreground region by restricting the attention of transformer blocks with the predicted body mask. 
+            However, we point out that the existing head swapping framework still shows artifacts, such as blurry results and imperfect foreground and background distinction.            
+            To mitigate this problem, we propose <b>Chroma-HS</b>, a pipeline that generates high-fidelity results via splitting the head swapping task into the background and the foreground generation.            
+            Chroma-HS introduces chroma keying to the head swapping for the first time, which enables a flawless and diverse background generation. 
+            In addition, we introduce two novel methods to generate high-fidelity foregrounds.
+            We propose <b>H</b>ead shape and long <b>H</b>air <b>augmentation</b> (<b>H<sup>2</sup> augmentation</b>), which accommodates more challenging cases.
+            Finally, Chroma-HS incorporates <b>F</b>oreground <b>P</b>redictive <b>A</b>ttention <b>T</b>ransformer (<b>FPAT</b>) which generates the foreground region by restricting the attention region with the predicted body mask. 
             Experimental results show that our Chroma-HS significantly outperforms the state-of-the-art head swapping model on benchmark datasets both qualitatively and quantitatively.
           </p>
         </div>
