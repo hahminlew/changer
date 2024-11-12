@@ -7,7 +7,7 @@ function playVids(videoId) {
     var vid = document.getElementById(videoId);
 
     var positionX = 0.6; // Default horizontal position
-    var positionY = 0.1; // Default vertical position (relative to video height)
+    var positionY = 0.5; // Default vertical position (relative to video height)
     var vidWidth = vid.videoWidth / 2;
     var vidHeight = vid.videoHeight;
 
