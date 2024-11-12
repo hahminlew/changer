@@ -13,7 +13,7 @@ function playVids(videoId) {
 
     var mergeContext = videoMerge.getContext("2d");
 
-    if (vid.readyState > 3) {
+    if (vid.readyState > 1) {
         vid.play();
 
         function trackLocation(e) {
