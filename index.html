@@ -133,9 +133,46 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/sam.mp4"
+        <source src="./static/videos/sam_with_audio.mp4"
                 type="video/mp4">
       </video>
+      <!-- Mute/Unmute Icon Button -->
+      <div id="muteToggle" style="
+          position: absolute;
+          bottom: 170px;
+          right: 40px;
+          background-color: rgba(0, 0, 0, 0.7);
+          border-radius: 10%;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 10; /* Ensure it appears above the canvas */
+      ">
+          <img id="muteIcon" src="https://img.icons8.com/ios-filled/50/ffffff/mute.png" alt="Mute" style="width: 30px; height: 30px;">
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const video = document.getElementById('teaser');
+          const muteToggle = document.getElementById('muteToggle');
+          const muteIcon = document.getElementById('muteIcon');
+      
+          muteToggle.addEventListener('click', () => {
+            if (video.muted) {
+              video.muted = false;
+              muteIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/high-volume.png'; // Unmute icon
+            } else {
+              video.muted = true;
+              muteIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/mute.png'; // Mute icon
+            }
+          });
+      
+          // Sync icon on volume change
+          video.addEventListener('volumechange', () => {
+            muteIcon.src = video.muted
+              ? 'https://img.icons8.com/ios-filled/50/ffffff/mute.png'
+              : 'https://img.icons8.com/ios-filled/50/ffffff/high-volume.png';
+          });
+        });
+      </script>
       <h2 class="subtitle has-text-centered">
         We propose <b>CHANGER</b>, a novel pipeline for <b>C</b>onsistent <b>H</b>ead blending with predictive <b>A</b>tte<b>N</b>tion <b>G</b>uided foreground <b>E</b>stimation under chroma key setting for indust<b>R</b>ial applications.
         CHANGER generates a high-fidelity head blended result.
