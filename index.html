@@ -150,7 +150,7 @@
           cursor: pointer;
           z-index: 10; /* Ensure it appears above the canvas */
       ">
-          <img id="muteIcon" src="https://img.icons8.com/ios-filled/50/ffffff/mute.png" alt="Mute" style="width: 30px; height: 30px;">
+          <img id="muteIcon" src="./static/images/mute.png" alt="Mute" style="width: 30px; height: 30px;">
       </div>
       <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -161,18 +161,18 @@
           muteToggle.addEventListener('click', () => {
             if (video.muted) {
               video.muted = false;
-              muteIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/high-volume.png'; // Unmute icon
+              muteIcon.src = './static/images/high-volume.png'; // Unmute icon
             } else {
               video.muted = true;
-              muteIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/mute.png'; // Mute icon
+              muteIcon.src = './static/images/mute.png'; // Mute icon
             }
           });
       
           // Sync icon on volume change
           video.addEventListener('volumechange', () => {
             muteIcon.src = video.muted
-              ? 'https://img.icons8.com/ios-filled/50/ffffff/mute.png'
-              : 'https://img.icons8.com/ios-filled/50/ffffff/high-volume.png';
+              ? './static/images/mute.png'
+              : './static/images/high-volume.png';
           });
         });
       </script>
