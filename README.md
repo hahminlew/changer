@@ -7,11 +7,13 @@ This is the repository that contains source code for the [CHANGER website](https
 
 If you find CHANGER useful for your work please cite:
 ```
-@article{lew2024towards,
+@inproceedings{lew2025towards,
   title={Towards High-fidelity Head Blending with Chroma Keying for Industrial Applications},
   author={Lew, Hah Min and Yoo, Sahng-Min and Kang, Hyunwoo and Park, Gyeong-Moon},
-  journal={arXiv preprint arXiv:2411.00652},
-  year={2024}
+  booktitle={2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  pages={6188--6196},
+  year={2025},
+  organization={IEEE}
 }
 ```
 
